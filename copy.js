@@ -2,10 +2,10 @@ const path = require('path');
 const fse = require('fs-extra');
 
 function copyReadme() {
-  return fse.copyFile(
-    path.resolve(__dirname, '..', 'README.md'),
-    path.resolve(__dirname, 'build', 'README.md')
-  );
+  // return fse.copyFile(
+  //   path.resolve(__dirname, '..', 'README.md'),
+  //   path.resolve(__dirname, 'build', 'README.md')
+  // );
 }
 
 function createPackageFile() {
