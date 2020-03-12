@@ -16,6 +16,8 @@ export interface BaseDatePickerProps {
     disableFuture?: boolean;
     /** To animate scrolling to current year (with scrollIntoView) */
     animateYearScrolling?: boolean;
+    /** To select month */
+    monthSelection?: boolean;
     /** Array of views to show. Order year -> month -> day */
     views?: Array<'year' | 'month' | 'day'>;
     /** Initial view to show when date picker is open */
@@ -66,6 +68,6 @@ export declare class DatePicker extends React.PureComponent<DatePickerProps> {
     openMonthSelection: () => void;
     render(): JSX.Element;
 }
-export declare const styles: () => Record<"toolbarCenter", import("@material-ui/core/styles/withStyles").CSSProperties>;
-declare const _default: React.ComponentType<Pick<React.PropsWithChildren<Pick<DatePickerProps, "initialFocusedDate" | "onChange" | "date" | "classes" | "maxDate" | "minDate" | "disablePast" | "disableFuture" | "shouldDisableDate" | "onMonthChange" | "leftArrowIcon" | "rightArrowIcon" | "renderDay" | "allowKeyboardControl" | "animateYearScrolling" | "onYearChange" | "views" | "openTo" | "openToYearSelection">>, "children" | "initialFocusedDate" | "onChange" | "date" | "maxDate" | "minDate" | "disablePast" | "disableFuture" | "shouldDisableDate" | "onMonthChange" | "leftArrowIcon" | "rightArrowIcon" | "renderDay" | "allowKeyboardControl" | "animateYearScrolling" | "onYearChange" | "views" | "openTo" | "openToYearSelection"> & import("@material-ui/core/styles/withStyles").StyledComponentProps<"toolbarCenter">>;
+export declare const styles: () => Record<"toolbarCenter" | "yearSection", import("@material-ui/core/styles/withStyles").CSSProperties>;
+declare const _default: React.ComponentType<Pick<React.PropsWithChildren<Pick<DatePickerProps, "initialFocusedDate" | "onChange" | "date" | "classes" | "maxDate" | "minDate" | "disablePast" | "disableFuture" | "shouldDisableDate" | "onMonthChange" | "leftArrowIcon" | "rightArrowIcon" | "renderDay" | "allowKeyboardControl" | "animateYearScrolling" | "onYearChange" | "monthSelection" | "views" | "openTo" | "openToYearSelection">>, "children" | "initialFocusedDate" | "onChange" | "date" | "maxDate" | "minDate" | "disablePast" | "disableFuture" | "shouldDisableDate" | "onMonthChange" | "leftArrowIcon" | "rightArrowIcon" | "renderDay" | "allowKeyboardControl" | "animateYearScrolling" | "onYearChange" | "monthSelection" | "views" | "openTo" | "openToYearSelection"> & import("@material-ui/core/styles/withStyles").StyledComponentProps<"toolbarCenter" | "yearSection">>;
 export default _default;

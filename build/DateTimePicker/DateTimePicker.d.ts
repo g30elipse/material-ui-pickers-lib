@@ -51,5 +51,5 @@ export declare class DateTimePicker extends React.Component<DateTimePickerProps,
     handleHourChange: (time: any, isFinish?: boolean | undefined) => void;
     render(): JSX.Element;
 }
-declare const _default: React.SFC<Pick<DateTimePickerProps, "initialFocusedDate" | "onChange" | "ampm" | "date" | "maxDate" | "minDate" | "disablePast" | "disableFuture" | "showTabs" | "shouldDisableDate" | "onMonthChange" | "leftArrowIcon" | "rightArrowIcon" | "renderDay" | "allowKeyboardControl" | "animateYearScrolling" | "onYearChange" | "openTo" | "minutesStep" | "dateRangeIcon" | "timeIcon" | "autoSubmit" | "ViewContainerComponent">>;
+declare const _default: React.SFC<Pick<DateTimePickerProps, "initialFocusedDate" | "onChange" | "ampm" | "date" | "maxDate" | "minDate" | "disablePast" | "disableFuture" | "showTabs" | "shouldDisableDate" | "onMonthChange" | "leftArrowIcon" | "rightArrowIcon" | "renderDay" | "allowKeyboardControl" | "animateYearScrolling" | "onYearChange" | "monthSelection" | "openTo" | "minutesStep" | "dateRangeIcon" | "timeIcon" | "autoSubmit" | "ViewContainerComponent">>;
 export default _default;

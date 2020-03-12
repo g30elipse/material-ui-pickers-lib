@@ -117,11 +117,13 @@ var DatePicker = /** @class */ (function (_super) {
     DatePicker.prototype.render = function () {
         var _a;
         var openView = this.state.openView;
-        var _b = this.props, disablePast = _b.disablePast, disableFuture = _b.disableFuture, onChange = _b.onChange, animateYearScrolling = _b.animateYearScrolling, leftArrowIcon = _b.leftArrowIcon, rightArrowIcon = _b.rightArrowIcon, renderDay = _b.renderDay, utils = _b.utils, shouldDisableDate = _b.shouldDisableDate, allowKeyboardControl = _b.allowKeyboardControl, classes = _b.classes, onMonthChange = _b.onMonthChange, onYearChange = _b.onYearChange;
+        var _b = this.props, disablePast = _b.disablePast, disableFuture = _b.disableFuture, _c = _b.monthSelection, monthSelection = _c === void 0 ? true : _c, onChange = _b.onChange, animateYearScrolling = _b.animateYearScrolling, leftArrowIcon = _b.leftArrowIcon, rightArrowIcon = _b.rightArrowIcon, renderDay = _b.renderDay, utils = _b.utils, shouldDisableDate = _b.shouldDisableDate, allowKeyboardControl = _b.allowKeyboardControl, classes = _b.classes, onMonthChange = _b.onMonthChange, onYearChange = _b.onYearChange;
         return (React.createElement(React.Fragment, null,
             React.createElement(PickerToolbar_1.default, { className: clsx_1.default((_a = {}, _a[classes.toolbarCenter] = this.isYearOnly, _a)) },
-                React.createElement(ToolbarButton_1.default, { variant: this.isYearOnly ? 'h3' : 'subtitle1', onClick: this.isYearOnly ? undefined : this.openYearSelection, selected: openView === 'year', label: utils.getYearText(this.date) }),
-                React.createElement(ToolbarButton_1.default, { variant: this.isYearOnly ? 'h3' : 'h5', onClick: this.isYearOnly ? undefined : this.openMonthSelection, selected: openView === 'month', label: utils.getMonthText(this.date) }),
+                React.createElement("div", { className: classes.yearSection },
+                    React.createElement(ToolbarButton_1.default, { variant: this.isYearOnly ? 'h3' : 'subtitle1', onClick: this.isYearOnly ? undefined : this.openYearSelection, selected: openView === 'year', label: utils.getYearText(this.date) }),
+                    monthSelection &&
+                        React.createElement(ToolbarButton_1.default, { variant: this.isYearOnly ? 'h3' : 'subtitle1', onClick: this.isYearOnly ? undefined : this.openMonthSelection, selected: openView === 'month', label: utils.getMonthText(this.date) })),
                 !this.isYearOnly && !this.isYearAndMonth && (React.createElement(ToolbarButton_1.default, { variant: "h4", onClick: this.openCalendar, selected: openView === 'day', label: utils.getDatePickerHeaderText(this.date) })),
                 this.isYearAndMonth && (React.createElement(ToolbarButton_1.default, { variant: "h4", onClick: this.openMonthSelection, selected: openView === 'month', label: utils.getMonthText(this.date) }))),
             this.props.children,
@@ -149,6 +151,13 @@ exports.styles = function () {
             flexDirection: 'row',
             alignItems: 'center',
         },
+        yearSection: {
+            display: 'flex',
+            alignItems: 'center',
+            '& > *': {
+                marginRight: 2
+            }
+        }
     });
 };
 exports.default = withStyles_1.default(exports.styles)(WithUtils_1.withUtils()(DatePicker));

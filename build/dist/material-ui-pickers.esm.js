@@ -2092,6 +2092,8 @@ function (_super) {
     var _b = this.props,
         disablePast = _b.disablePast,
         disableFuture = _b.disableFuture,
+        _c = _b.monthSelection,
+        monthSelection = _c === void 0 ? true : _c,
         onChange = _b.onChange,
         animateYearScrolling = _b.animateYearScrolling,
         leftArrowIcon = _b.leftArrowIcon,
@@ -2105,17 +2107,19 @@ function (_super) {
         onYearChange = _b.onYearChange;
     return createElement(Fragment, null, createElement(PickerToolbar$1, {
       className: clsx((_a = {}, _a[classes.toolbarCenter] = this.isYearOnly, _a))
+    }, createElement("div", {
+      className: classes.yearSection
     }, createElement(ToolbarButton$1, {
       variant: this.isYearOnly ? 'h3' : 'subtitle1',
       onClick: this.isYearOnly ? undefined : this.openYearSelection,
       selected: openView === 'year',
       label: utils.getYearText(this.date)
-    }), createElement(ToolbarButton$1, {
-      variant: this.isYearOnly ? 'h3' : 'h5',
+    }), monthSelection && createElement(ToolbarButton$1, {
+      variant: this.isYearOnly ? 'h3' : 'subtitle1',
       onClick: this.isYearOnly ? undefined : this.openMonthSelection,
       selected: openView === 'month',
       label: utils.getMonthText(this.date)
-    }), !this.isYearOnly && !this.isYearAndMonth && createElement(ToolbarButton$1, {
+    })), !this.isYearOnly && !this.isYearAndMonth && createElement(ToolbarButton$1, {
       variant: "h4",
       onClick: this.openCalendar,
       selected: openView === 'day',
@@ -2175,6 +2179,13 @@ var styles$b = function styles() {
     toolbarCenter: {
       flexDirection: 'row',
       alignItems: 'center'
+    },
+    yearSection: {
+      display: 'flex',
+      alignItems: 'center',
+      '& > *': {
+        marginRight: 2
+      }
     }
   });
 };

@@ -26,6 +26,10 @@ export interface BaseDatePickerProps {
   disableFuture?: boolean;
   /** To animate scrolling to current year (with scrollIntoView) */
   animateYearScrolling?: boolean;
+
+  /** To select month */
+  monthSelection?: boolean;
+
   /** Array of views to show. Order year -> month -> day */
   views?: Array<'year' | 'month' | 'day'>;
   /** Initial view to show when date picker is open */
@@ -148,6 +152,7 @@ export class DatePicker extends React.PureComponent<DatePickerProps> {
     const {
       disablePast,
       disableFuture,
+      monthSelection = true,
       onChange,
       animateYearScrolling,
       leftArrowIcon,
@@ -165,18 +170,23 @@ export class DatePicker extends React.PureComponent<DatePickerProps> {
     return (
       <>
         <PickerToolbar className={clsx({ [classes.toolbarCenter]: this.isYearOnly })}>
-          <ToolbarButton
-            variant={this.isYearOnly ? 'h3' : 'subtitle1'}
-            onClick={this.isYearOnly ? undefined : this.openYearSelection}
-            selected={openView === 'year'}
-            label={utils.getYearText(this.date)}
-          />
-          <ToolbarButton
-            variant={this.isYearOnly ? 'h3' : 'h5'}
-            onClick={this.isYearOnly ? undefined : this.openMonthSelection}
-            selected={openView === 'month'}
-            label={utils.getMonthText(this.date)}
-          />
+          <div className={classes.yearSection}>
+            <ToolbarButton
+              variant={this.isYearOnly ? 'h3' : 'subtitle1'}
+              onClick={this.isYearOnly ? undefined : this.openYearSelection}
+              selected={openView === 'year'}
+              label={utils.getYearText(this.date)}
+            />
+            {
+              monthSelection &&
+              <ToolbarButton
+                variant={this.isYearOnly ? 'h3' : 'subtitle1'}
+                onClick={this.isYearOnly ? undefined : this.openMonthSelection}
+                selected={openView === 'month'}
+                label={utils.getMonthText(this.date)}
+              />
+            }
+          </div>
 
           {!this.isYearOnly && !this.isYearAndMonth && (
             <ToolbarButton
@@ -248,6 +258,13 @@ export const styles = () =>
       flexDirection: 'row',
       alignItems: 'center',
     },
+    yearSection: {
+      display: 'flex',
+      alignItems: 'center',
+      '& > *': {
+        marginRight: 2
+      }
+    }
   });
 
 export default withStyles(styles)(withUtils()(DatePicker));
