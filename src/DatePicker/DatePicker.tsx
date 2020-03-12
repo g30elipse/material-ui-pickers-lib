@@ -177,15 +177,14 @@ export class DatePicker extends React.PureComponent<DatePickerProps> {
               selected={openView === 'year'}
               label={utils.getYearText(this.date)}
             />
-            {
-              monthSelection &&
+            {monthSelection && (
               <ToolbarButton
                 variant={this.isYearOnly ? 'h3' : 'subtitle1'}
                 onClick={this.isYearOnly ? undefined : this.openMonthSelection}
                 selected={openView === 'month'}
                 label={utils.getMonthText(this.date)}
               />
-            }
+            )}
           </div>
 
           {!this.isYearOnly && !this.isYearAndMonth && (

@@ -122,8 +122,7 @@ var DatePicker = /** @class */ (function (_super) {
             React.createElement(PickerToolbar_1.default, { className: clsx_1.default((_a = {}, _a[classes.toolbarCenter] = this.isYearOnly, _a)) },
                 React.createElement("div", { className: classes.yearSection },
                     React.createElement(ToolbarButton_1.default, { variant: this.isYearOnly ? 'h3' : 'subtitle1', onClick: this.isYearOnly ? undefined : this.openYearSelection, selected: openView === 'year', label: utils.getYearText(this.date) }),
-                    monthSelection &&
-                        React.createElement(ToolbarButton_1.default, { variant: this.isYearOnly ? 'h3' : 'subtitle1', onClick: this.isYearOnly ? undefined : this.openMonthSelection, selected: openView === 'month', label: utils.getMonthText(this.date) })),
+                    monthSelection && (React.createElement(ToolbarButton_1.default, { variant: this.isYearOnly ? 'h3' : 'subtitle1', onClick: this.isYearOnly ? undefined : this.openMonthSelection, selected: openView === 'month', label: utils.getMonthText(this.date) }))),
                 !this.isYearOnly && !this.isYearAndMonth && (React.createElement(ToolbarButton_1.default, { variant: "h4", onClick: this.openCalendar, selected: openView === 'day', label: utils.getDatePickerHeaderText(this.date) })),
                 this.isYearAndMonth && (React.createElement(ToolbarButton_1.default, { variant: "h4", onClick: this.openMonthSelection, selected: openView === 'month', label: utils.getMonthText(this.date) }))),
             this.props.children,
