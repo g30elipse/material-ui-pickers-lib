@@ -16,7 +16,7 @@ export interface BaseDatePickerProps {
     disableFuture?: boolean;
     /** To animate scrolling to current year (with scrollIntoView) */
     animateYearScrolling?: boolean;
-    /** To select month */
+    /** Enable click to select month */
     monthSelection?: boolean;
     /** Array of views to show. Order year -> month -> day */
     views?: Array<'year' | 'month' | 'day'>;

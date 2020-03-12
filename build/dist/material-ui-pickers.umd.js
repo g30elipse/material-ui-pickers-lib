@@ -4481,7 +4481,7 @@
           display: 'flex',
           alignItems: 'center',
           '& > *': {
-            marginRight: 2
+            marginRight: 12
           }
         }
       });

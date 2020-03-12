@@ -27,7 +27,7 @@ export interface BaseDatePickerProps {
   /** To animate scrolling to current year (with scrollIntoView) */
   animateYearScrolling?: boolean;
 
-  /** To select month */
+  /** Enable click to select month */
   monthSelection?: boolean;
 
   /** Array of views to show. Order year -> month -> day */
@@ -262,7 +262,7 @@ export const styles = () =>
       display: 'flex',
       alignItems: 'center',
       '& > *': {
-        marginRight: 2
+        marginRight: 12
       }
     }
   });

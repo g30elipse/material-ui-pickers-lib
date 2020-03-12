@@ -2191,7 +2191,7 @@ var styles$b = function styles() {
       display: 'flex',
       alignItems: 'center',
       '& > *': {
-        marginRight: 2
+        marginRight: 12
       }
     }
   });
